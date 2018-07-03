@@ -30,6 +30,7 @@ public interface UserService {
 	 * Creates new user 
 	 * @param userBuilder used to define user properties
 	 * @param notify determines whether notification email should be send
+	 * @return newly created {@link User}
 	 * @throws RuntimeException if user does not exist or permission is denied
 	 */
 	User createUser(UserBuilder userBuilder, boolean notify);
@@ -65,6 +66,6 @@ public interface UserService {
 	 * @param userGroups id's of the groups
 	 * @throws RuntimeException if user does not exist, user groups do not exist or permission is denied
 	 */
-	void updateUserGroupAssociation(Integer user, Integer... userGroups);
+	void updateUserGroupAssociation(Integer userId, Integer... userGroups);
 
 }

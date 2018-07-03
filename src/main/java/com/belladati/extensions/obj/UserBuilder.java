@@ -51,12 +51,14 @@ public interface UserBuilder {
 	/**
 	 * Sets the user's locale.
 	 * @param locale the user's locale
+	 * @return Current {@link UserBuilder} instance
 	 */
 	UserBuilder setLocale(String locale);
 
 	/**
 	 * Sets the user's active status.
 	 * @param active <code>true</code> if user is active, <code>false</code> otherwise
+	 * @return Current {@link UserBuilder} instance
 	 */
 	UserBuilder setActive(Boolean active);
 
