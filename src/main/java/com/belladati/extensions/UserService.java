@@ -2,6 +2,7 @@ package com.belladati.extensions;
 
 import com.belladati.extensions.obj.User;
 import com.belladati.extensions.obj.UserBuilder;
+import com.belladati.extensions.obj.UserRequestType;
 import com.belladati.extensions.obj.UserRole;
 
 /**
@@ -67,5 +68,14 @@ public interface UserService {
 	 * @throws RuntimeException if user does not exist, user groups do not exist or permission is denied
 	 */
 	void updateUserGroupAssociation(Integer userId, Integer... userGroups);
+
+	/**
+	 * Creates an user request of desired type.
+	 * @param username username of the user the request is created for.
+	 * @param type Specifies the type of the request. Available types are: LOGIN_UNATTENDED, PASSWORD_SET, PASSWORD_RESET, UNLOCK_ACCOUNT, LOGIN
+	 * @return request_id and request_code of the created request. Example: 1544;RDQX1Qx9UokSf4n3KAVWgNClvrFUqncSZg7fK3gnVAfNIAOylN
+	 * @throws RuntimeException if user does not exist or permission is denied
+	 */
+	String createUserRequest(String username, UserRequestType type);
 
 }
